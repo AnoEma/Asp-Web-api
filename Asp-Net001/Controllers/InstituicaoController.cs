@@ -45,12 +45,17 @@ namespace Asp_Net001.Controllers
         {
             return View(instituicaos.OrderBy(i => i.Nome));
         }
+        public IActionResult Create()
+        {
+            
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Instituicao instituicao)
         {
             instituicaos.Add(instituicao);
-            instituicao.InstituicaoID = instituicaos.Select(i => i.InstituicaoID).Max()+ 1;
+            instituicao.InstituicaoID = instituicaos.Select(i => i.InstituicaoID).Max() + 1;
             return RedirectToAction("Index");
         }
 
@@ -76,6 +81,14 @@ namespace Asp_Net001.Controllers
         public ActionResult Delete(long id)
         {
             return View(instituicaos.Where(i => i.InstituicaoID == id).First());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int instituicaoId)
+        {
+            _ = instituicaos.Remove(instituicaos.Where(i => i.InstituicaoID == instituicaoId).First());
+            return RedirectToAction("Index");
         }
     }
 }

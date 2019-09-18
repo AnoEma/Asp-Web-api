@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Asp_Net001.Models.Instituicao>
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 </head>
 <body>
     <p>
-        <a asp-action="Create">Criar nova instituição</a>
+        <a asp-action="Create" asp-controller="Instituicao" class="btn btn-success">Criar nova instituição</a>
     </p>
     <table class="table">
         <thead>
@@ -43,10 +43,10 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Endereco)
                     </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.InstituicaoID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.InstituicaoID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.InstituicaoID })
+                    <td class="align-content-lg-end">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.InstituicaoID }, new { @class = "btn btn-primary" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.InstituicaoID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.InstituicaoID }, new { @class = "btn btn-primary" })
                     </td>
                 </tr>
             }

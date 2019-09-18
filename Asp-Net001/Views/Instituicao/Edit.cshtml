@@ -1,7 +1,7 @@
 ﻿@model Asp_Net001.Models.Instituicao
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Edit">
+            <form asp-action="Edit" class="form-group col-md-10">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="InstituicaoID" class="control-label"></label>
@@ -46,12 +46,11 @@
                         <input type="submit" value="Save" class="btn btn-primary" />
                     </div>
                 </div>
+                <div>
+                    <a asp-action="Index" class="btn btn-light">Retorno</a>
+                </div>
             </form>
         </div>
-    </div>
-
-    <div>
-        <a asp-action="Index">Retorno</a>
     </div>
 
     @section Scripts {

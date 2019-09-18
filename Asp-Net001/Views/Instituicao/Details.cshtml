@@ -1,7 +1,7 @@
 ﻿@model Asp_Net001.Models.Instituicao
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -38,8 +38,8 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.InstituicaoID}) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.InstituicaoID},new { @class = "btn btn-primary" }) 
+    <a asp-action="Index" class="btn btn-light">Retorno</a>
 </div>
 </body>
 </html>

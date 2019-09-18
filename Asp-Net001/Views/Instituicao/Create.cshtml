@@ -1,7 +1,7 @@
 ﻿@model Asp_Net001.Models.Instituicao
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -45,13 +45,14 @@
                         <input type="submit" value="Create" class="btn btn-primary" />
                     </div>
                 </div>
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-action="Index" class="btn btn-light">Retorno</a>
+                </div>
             </form>
         </div>
     </div>
 
-    <div>
-        <a asp-action="Index">Retorno a listagem</a>
-    </div>
+
 
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
